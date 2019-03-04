@@ -1,0 +1,11 @@
+# Site settings
+title: Steve Mayne's Piece of the Web
+email: steve.mayne@gmail.com
+author: Steve Mayne
+description:
+url:
+
+# Build settings
+permalink: :title/
+sass:
+  sass_dir: css
