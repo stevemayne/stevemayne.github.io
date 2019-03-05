@@ -1,6 +1,6 @@
 ---
 layout: post
-author: steve
+author: Steve
 ---
 Here's another piece of content.
 
