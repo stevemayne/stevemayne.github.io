@@ -1,15 +1,4 @@
-<!-- JS -->
-<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
-<script src="https://keycloak-keycloak.caas.bs.kae.de.iplatform.1and1.org/auth/js/keycloak.js"></script>
 
-<script>
-  var keycloak = new Keycloak({ url: 'https://keycloak-keycloak.caas.bs.kae.de.iplatform.1and1.org/auth', realm: 'demo', clientId: 'stevemayne.com' });
-  keycloak.init({ onLoad: 'login-required' }).success(function(authenticated) {
-        alert(authenticated ? 'authenticated' : 'not authenticated');
-    }).error(function() {
-        alert('failed to initialize');
-    });
-</script>
 <!--
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

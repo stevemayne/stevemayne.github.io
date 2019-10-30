@@ -2,3 +2,28 @@
 ---
 
 @import 'bootstrap/bootstrap';
+
+#masthead {
+  height: 100vh;
+  min-height: 500px;
+  background-image: url('/images/heading.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #333;
+}
+
+#heading-text {
+  color: white;
+  font-family: 'Righteous', cursive;
+  text-shadow: 3px 3px 3px rgba(0,0,0,0.5);
+}
+
+#findme {
+  min-height: 500px;
+}
+
+#footer {
+  min-height: 200px;
+  background-color: #333;
+}
