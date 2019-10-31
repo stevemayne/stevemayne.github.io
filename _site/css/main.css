@@ -6505,6 +6505,10 @@ a.text-dark:hover, a.text-dark:focus {
   font-family: 'Righteous', cursive;
   text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5); }
 
+.subtext {
+  color: white;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.8); }
+
 #findme {
   min-height: 500px; }
 
