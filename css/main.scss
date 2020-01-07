@@ -1,7 +1,10 @@
 ---
 ---
-
-@import 'bootstrap/bootstrap';
+@import "bootstrap/functions";
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+@import "bootstrap/reboot";
+@import "bootstrap/grid";
 
 #masthead {
   height: 100vh;
