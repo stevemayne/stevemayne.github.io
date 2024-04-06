@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Author Clock</title>
+    <meta http-equiv="refresh" content="60">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <style>
+        /* Add your custom CSS styles here */
+        body {
+            font-family: serif;
+            background-color: #f4f4f4;
+        }
+        #quote {
+            font-family: "Dancing Script", cursive;
+            font-size: 2em;
+            font-style: normal;
+        }
+        #author {
+            font-size: 1em;
+            font-style: light;
+        }
+        #book {
+            font-size: 1em;
+            font-style: normal;
+        }
+        .quotation {
+            margin: 0 auto;
+            width: 50%;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="quote-container">
+        <div class="quotation">
+            <span id="quote"></span>
+            <p style="text-align: right;">
+                <span id="author"></span>,
+                <span id="book"></span>
+            </p>
+        </div>
+        
+    </div>
+
+    <script>
+        // Fetch quotes from quotes.json
+        const now = new Date();
+        var hours = now.getHours().toString();
+        if(hours.length == 1) {
+                    hours = '0'+hours;
+                }
+        //Fetch from json file with the correct hour suffix
+        fetch('quotes-'+hours+'.json')
+            .then(response => response.json())
+            .then(data => {
+                // Get the current timestamp
+                var minutes = now.getMinutes().toString();
+                var seconds = now.getSeconds().toString();
+                if(minutes.length == 1) {
+                    minutes = '0'+minutes;
+                }
+                if(seconds.length == 1) {
+                    seconds = '0'+seconds;
+                }  
+                const searchTime = hours + ':' + minutes + ':' + seconds + 'h';
+
+                // data is an array of quote objects with keys time, quote, book, author
+                // time is in the format HH:MM:SSh
+                
+                var closestHour = 0;
+                for (let i = 1; i < data.length; i++) {
+                    if (data[i].time > searchTime) {
+                        break;
+                    }
+                    closestHour = i - 1;
+                }
+                
+                // Get the quote based on the current hour
+                const quote = data[closestHour];
+
+                // Display the quote
+                document.getElementById('quote').textContent = quote.quote;
+                document.getElementById('author').textContent = quote.author;
+                document.getElementById('book').textContent = quote.book;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    </script>
+</body>
+</html>
